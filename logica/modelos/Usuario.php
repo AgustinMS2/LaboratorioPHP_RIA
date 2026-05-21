@@ -10,6 +10,7 @@ class Usuario {
     protected DateTime $fechaRegistro;
     protected Sesion $sesion;
     protected array $reportes;
+    protected array $publicaciones;
 
     public function __construct(int $id, string $nombre, string $email, string $passwordHash, bool $activo, DateTime $fechaRegistro) {
         $this->id = $id;
@@ -50,6 +51,10 @@ class Usuario {
 
     public function getReportes(): array {
         return $this->reportes;
+    }
+
+    public function getPublicaciones(): array {
+        return $this->publicaciones;
     }
 
 }  

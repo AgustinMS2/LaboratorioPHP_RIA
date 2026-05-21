@@ -1,8 +1,8 @@
 <?php
 
-class Revision {
+class Modera {
     private int $id;
-    private string motivoRechazo;
+    private string $motivoRechazo;
     private ResultadoRevision $resultado;
     private DateTime $fechaRevision;
     private Moderador $moderador;

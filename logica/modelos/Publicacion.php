@@ -11,15 +11,13 @@ abstract class Publicacion {
     protected EstadoPublicacion $estado;
     protected DateTime $fechaCreacion;
     protected DateTime $fechaUltimaModificacion;
-    protected Publicador $autor;
+    protected Usuario $autor;
     protected array $camposExtra;
     protected Seccion $seccion;
-    protected array $revisiones;
+    protected array $moderaciones;
     protected array $reportes;
 
-
-
-    public function __construct(int $id, string $titulo, string $foto, string $nombreCientifico, array $areasHabitat, string $dieta, string $horasActivas, EstadoPublicacion $estado, DateTime $fechaCreacion, Publicador $autor, array $camposExtra) {
+    public function __construct(int $id, string $titulo, string $foto, string $nombreCientifico, array $areasHabitat, string $dieta, string $horasActivas, EstadoPublicacion $estado, DateTime $fechaCreacion, Usuario $autor, array $camposExtra) {
         $this->id = $id;
         $this->titulo = $titulo;
         $this->foto = $foto;
@@ -74,7 +72,7 @@ abstract class Publicacion {
         return $this->fechaUltimaModificacion;
     }
 
-    public function getAutor(): Publicador {
+    public function getAutor(): Usuario {
         return $this->autor;
     }
 
