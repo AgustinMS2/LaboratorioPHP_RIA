@@ -30,7 +30,7 @@ Eso creará la base de datos "naturehub" con todas las tablas necesarias.
 
 ## Configuración de la conexión
 
-El archivo "parametrosConexion.php" usa los parámetros por defecto de XAMPP:
+El archivo "ParametrosConexion.php" usa los parámetros por defecto de XAMPP:
 
 - **Servidor:** localhost
 - **Usuario:** root
