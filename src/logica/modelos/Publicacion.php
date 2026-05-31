@@ -10,7 +10,7 @@ abstract class Publicacion {
     protected array $areasHabitat;
     protected string $dieta;
     protected string $horasActivas;
-    protected EstadoPublicacion $estado;
+    protected string $estado;
     protected DateTime $fechaCreacion;
     protected DateTime $fechaUltimaModificacion;
     protected array $camposExtra;
@@ -84,10 +84,10 @@ abstract class Publicacion {
         $this->horasActivas = $horasActivas;
     }
 
-    public function getEstado(): EstadoPublicacion {
+    public function getEstado(): string {
         return $this->estado;
     }
-    public function setEstado(EstadoPublicacion $estado): void {
+    public function setEstado(string $estado): void {
         $this->estado = $estado;
     }
 
