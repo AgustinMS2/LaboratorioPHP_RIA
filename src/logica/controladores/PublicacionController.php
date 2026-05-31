@@ -1,38 +1,38 @@
 <?php
-include __DIR__ . "/../../servicios/Interfaces/IPropuestaController.php";
-include __DIR__ . "/../../logica/manejadores/PropuestaRepositorio.php";
+include_once __DIR__ . "/../../servicios/Interfaces/IPublicacionController.php";
+include_once __DIR__ . "/../../logica/manejadores/PublicacionRepositorio.php";
 
-class PropuestaController implements IPropuestaController {
+class PublicacionController implements IPublicacionController {
 
     public function __construct() {}
 
-    public function altaPropuesta(DTPropuesta $dtp): void {
-        $repositorio = PropuestaRepositorio::getInstance();
+    public function altaPublicacion(DTPublicacion $dtp): void {
+        $repositorio = PublicacionRepositorio::getInstance();
         
     }
 
-    public function bajaPropuesta(int $id): void{
-        $repositorio = PropuestaRepositorio::getInstance();
+    public function bajaPublicacion(int $id): void{
+        $repositorio = PublicacionRepositorio::getInstance();
 
     }
 
-    public function modificarPropuesta(DTPropuesta $dtp): void{
-        $repositorio = PropuestaRepositorio::getInstance();
+    public function modificarPublicacion(DTPublicacion $dtp): void{
+        $repositorio = PublicacionRepositorio::getInstance();
 
     }
 
-    public function listarPropuestas(): array{
-        $repositorio = PropuestaRepositorio::getInstance();
+    public function listarPublicaciones(): array{
+        $repositorio = PublicacionRepositorio::getInstance();
 
     }
 
-    public function moderarPropuesta(): void{
-        $repositorio = PropuestaRepositorio::getInstance();
+    public function moderarPublicacion(): void{
+        $repositorio = PublicacionRepositorio::getInstance();
 
     }
 
     public function reportarPublicacion(DTReporte $dtr): void{
-        $repositorio = PropuestaRepositorio::getInstance();
+        $repositorio = PublicacionRepositorio::getInstance();
 
     }
 

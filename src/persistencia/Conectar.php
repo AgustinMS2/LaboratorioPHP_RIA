@@ -1,5 +1,5 @@
 <?php
-include "ParametrosConexion.php";
+include_once "ParametrosConexion.php";
 
 class Conectar extends mysqli {
     public function __construct() {

@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . "/../../persistencia/Conectar.php";
+include_once __DIR__ . "/../../persistencia/Conectar.php";
 
 class PublicacionRepositorio {
     private static ?PublicacionRepositorio $instancia = null;

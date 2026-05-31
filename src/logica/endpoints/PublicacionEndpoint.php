@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . "/../../servicios/Fabrica.php";
+include_once __DIR__ . "/../../servicios/Fabrica.php";
 
 class PublicacionEndpoint {
     private IPublicacionController $controlador;

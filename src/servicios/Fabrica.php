@@ -1,8 +1,8 @@
 <?php
-include __DIR__ . "/../logica/controladores/UsuarioController.php";
-include __DIR__ . "/../logica/controladores/PublicacionController.php";
-include __DIR__ . "/../servicios/Interfaces/IUsuarioController.php";
-include __DIR__ . "/../servicios/Interfaces/IPublicacionController.php";
+include_once __DIR__ . "/../logica/controladores/UsuarioController.php";
+include_once __DIR__ . "/../logica/controladores/PublicacionController.php";
+include_once __DIR__ . "/../servicios/Interfaces/IUsuarioController.php";
+include_once __DIR__ . "/../servicios/Interfaces/IPublicacionController.php";
 
 class Fabrica {
     private static ?Fabrica $instancia = null;
