@@ -2,8 +2,8 @@
 
 abstract class Publicacion {
     protected int $id;
-    protected Seccion $seccion;
-    protected Usuario $autor;
+    protected int $seccion;
+    protected int $autor;
     protected string $titulo;
     protected string $nombreCientifico;
     protected string $foto;
@@ -17,7 +17,7 @@ abstract class Publicacion {
     protected array $moderaciones;
     protected array $reportes;
 
-    public function __construct(int $id, string $titulo, string $foto, string $nombreCientifico, array $areasHabitat, string $dieta, string $horasActivas, EstadoPublicacion $estado, DateTime $fechaCreacion, DateTime $fechaUltimaModificacion, Usuario $autor, array $camposExtra, Seccion $seccion) {
+    public function __construct(int $id, string $titulo, string $foto, string $nombreCientifico, array $areasHabitat, string $dieta, string $horasActivas, EstadoPublicacion $estado, DateTime $fechaCreacion, DateTime $fechaUltimaModificacion, int $autor, array $camposExtra, int $seccion) {
         $this->id = $id;
         $this->seccion = $seccion;
         $this->autor = $autor;
@@ -105,10 +105,10 @@ abstract class Publicacion {
         $this->fechaUltimaModificacion = $fechaUltimaModificacion;
     }
 
-    public function getAutor(): Usuario {
+    public function getAutor(): int {
         return $this->autor;
     }
-    public function setAutor(Usuario $autor): void {
+    public function setAutor(int $autor): void {
         $this->autor = $autor;
     }
 
@@ -119,10 +119,10 @@ abstract class Publicacion {
         $this->camposExtra = $camposExtra;
     }
 
-    public function getSeccion(): Seccion {
+    public function getSeccion(): int {
         return $this->seccion;
     }
-    public function setSeccion(Seccion $seccion): void {
+    public function setSeccion(int $seccion): void {
         $this->seccion = $seccion;
     }
 

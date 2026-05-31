@@ -2,8 +2,8 @@
 
  class DTPublicacion{
     protected int $id;
-    protected string $seccion;
-    protected string $autor;
+    protected int $seccion;
+    protected int $autor;
     protected string $titulo;
     protected string $nombreCientifico;
     protected string $foto;
@@ -14,7 +14,7 @@
     protected string $fechaCreacion;
     protected string $fechaUltimaModificacion;
 
-    public function __construct(int $id, string $titulo, string $foto, string $nombreCientifico, array $areasHabitat, string $dieta, string $horasActivas, EstadoPublicacion $estado, DateTime $fechaCreacion, DateTime $fechaUltimaModificacion, Usuario $autor, array $camposExtra, Seccion $seccion) {
+    public function __construct(int $id, string $titulo, string $foto, string $nombreCientifico, array $areasHabitat, string $dieta, string $horasActivas, EstadoPublicacion $estado, DateTime $fechaCreacion, DateTime $fechaUltimaModificacion, int $autor, array $camposExtra, int $seccion) {
         $this->id = $id;
         $this->seccion = $seccion;
         $this->autor = $autor;
@@ -36,17 +36,17 @@
         $this->id = $id;
     }
 
-    public function getSeccion(): string {
+    public function getSeccion(): int {
         return $this->seccion;
     }
-    public function setSeccion(string $seccion): void {
+    public function setSeccion(int $seccion): void {
         $this->seccion = $seccion;
     }
 
-    public function getAutor(): string {
+    public function getAutor(): int {
         return $this->autor;
     }
-    public function setAutor(string $autor): void {
+    public function setAutor(int $autor): void {
         $this->autor = $autor;
     }
 
