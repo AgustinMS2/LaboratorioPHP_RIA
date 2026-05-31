@@ -8,6 +8,58 @@ class PublicacionEndpoint {
         $this->controlador = Fabrica::getInstance()->getIPublicacionController();
     }
 
+    // http://localhost/backend-NatureHub/src/index.php/publicaciones/altaPublicacion
+    public function altaPublicacion(): void{
+        $datos = json_decode(file_get_contents("php://input"));
+
+        $dtp = new DTPublicacion(
+            null,
+            $datos->seccion,
+            $datos->autor,
+            $datos->titulo,
+            $datos->nombreCientifico,
+            $datos->foto,
+            $datos->areasHabitat,
+            $datos->dieta,
+            $datos->horasActivas,
+            null,
+            null,
+            null
+        );
+
+        $this->controlador->altaPublicacion($dtp);
+
+        http_response_code(201);
+        echo json_encode(["mensaje" => "Publicacion creada correctamente"]);
+    }
+
+    public function bajaPublicacion(int $id): void{
+
+    }
+
+    public function modificarPublicacion(): void{
+
+    }
+
+    public function listarPublicaciones(): void{
+
+    }
+
+    public function listadoPublicacionesPropias(int $id): void{
+
+    }
+
+    public function agregarCampoExtra(): void{
+        
+    }
+
+    public function eliminarCampoExtra(int $id): void{
+        
+    }
+
+    public function listarPublicacionFiltro(string $filtro): void{
+        
+    }
 
 }
 

@@ -2,37 +2,37 @@
 
 abstract class Publicacion {
     protected int $id;
+    protected Seccion $seccion;
+    protected Usuario $autor;
     protected string $titulo;
-    protected string $foto;
     protected string $nombreCientifico;
+    protected string $foto;
     protected array $areasHabitat;
     protected string $dieta;
     protected string $horasActivas;
     protected EstadoPublicacion $estado;
     protected DateTime $fechaCreacion;
     protected DateTime $fechaUltimaModificacion;
-    protected Usuario $autor;
     protected array $camposExtra;
-    protected Seccion $seccion;
     protected array $moderaciones;
     protected array $reportes;
 
     public function __construct(int $id, string $titulo, string $foto, string $nombreCientifico, array $areasHabitat, string $dieta, string $horasActivas, EstadoPublicacion $estado, DateTime $fechaCreacion, DateTime $fechaUltimaModificacion, Usuario $autor, array $camposExtra, Seccion $seccion) {
         $this->id = $id;
+        $this->seccion = $seccion;
+        $this->autor = $autor;
         $this->titulo = $titulo;
-        $this->foto = $foto;
         $this->nombreCientifico = $nombreCientifico;
+        $this->foto = $foto;
         $this->areasHabitat = $areasHabitat;
         $this->dieta = $dieta;
         $this->horasActivas = $horasActivas;
+        $this->estado = $estado;
         $this->fechaCreacion = $fechaCreacion;
         $this->fechaUltimaModificacion = $fechaUltimaModificacion;
-        $this->estado = $estado;
-        $this->autor = $autor;
         $this->camposExtra = $camposExtra;
         $this->moderaciones = [];
         $this->reportes = [];
-        $this->seccion = $seccion;
     }
 
     public function getId(): int {

@@ -8,6 +8,35 @@ class PublicacionController implements IPublicacionController {
 
     public function altaPublicacion(DTPublicacion $dtp): void {
         $repositorio = PublicacionRepositorio::getInstance();
+
+        $publicacionExistente = $repositorio->obtenerPublicacionTitulo($dtp->getTitulo());
+        if ($publicacionExistente != null){
+            throw new Exception("Ya existe una publicacion con ese titulo");
+        }
+
+        $id = $repositorio->obtenerSiguienteId();
+        $fechaCreacion = new DateTime();
+        $fechaUltimaModificacion = new DateTime();
+
+        $publicacion = new Publicacion(
+            $id,
+            $dtp->getSeccion(),
+            $dtp->getAutor(),
+            $dtp->getTitulo(),
+            $dtp->getNombreCientifico(),
+            $dtp->getFoto(),
+            $dtp->getAreasHabitat(),
+            $dtp->getDieta(),
+            $dtp->getHorasActivas(),
+            'PENDIENTE_REVISION',
+            $fechaCreacion,
+            $fechaUltimaModificacion,
+            [],
+            [],
+            []
+        );
+
+        $repositorio->agregarPublicacion($publicacion);
         
     }
 
@@ -24,6 +53,22 @@ class PublicacionController implements IPublicacionController {
     public function listarPublicaciones(): array{
         $repositorio = PublicacionRepositorio::getInstance();
 
+    }
+
+    public function listadoPublicacionesPropias(int $id): void{
+        $repositorio = PublicacionRepositorio::getInstance();
+    }
+
+    public function agregarCampoExtra(): void{
+        $repositorio = PublicacionRepositorio::getInstance();
+    }
+
+    public function eliminarCampoExtra(int $id): void{
+        $repositorio = PublicacionRepositorio::getInstance();
+    }
+
+    public function listarPublicacionFiltro(string $filtro): void{
+        $repositorio = PublicacionRepositorio::getInstance();
     }
 
     public function moderarPublicacion(): void{
